@@ -17,6 +17,7 @@ import Pets from "../pages/Pets";
 import Food from "../pages/Food";
 import Accessories from "../pages/Accessories";
 import CareProducts from "../pages/CareProducts";
+import LatestListings from "../pages/LatestListings";
 
 
 
@@ -88,6 +89,10 @@ const router = createBrowserRouter([
              {
                 path: '/CareProducts/:category',
                 element: <CareProducts />
+            },
+            {
+                path: '/latestListing',
+                element: <LatestListings />
             },
         ]
     },

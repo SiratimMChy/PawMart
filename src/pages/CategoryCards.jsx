@@ -36,8 +36,8 @@ const categories = [
 const CategoryCards = () => {
   return (
     <div>
-        <h2 className='text-center text-3xl font-bold mt-4'>All Category</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center mt-4 mb-8 px-4">
+        <h2 className='text-center text-3xl font-bold mt-5'>All Categories</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center mt-4 mb-8 px-5">
       {categories.map(cat => (
         <div
           key={cat.value}

@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from '../component/Slider';
 import CategoryCards from './CategoryCards';
+import LatestListings from './LatestListings';
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
             <title>Home</title>
             <Slider/>
             <CategoryCards/>
+            <LatestListings/>
         </div>
     );
 };
