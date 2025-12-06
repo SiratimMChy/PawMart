@@ -113,17 +113,11 @@ const Navbar = () => {
                                 <NavLink to="/MyListing" className={({ isActive }) => isActive ? "bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent font-bold" : "text-gray-800 font-bold text-lg hover:cursor-pointer hover:text-blue-500"}>
                                     My Listing
                                 </NavLink>
-                                 <NavLink to="/MyOrders" className={({ isActive }) => isActive ? "bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent font-bold" : "text-gray-800 font-bold text-lg hover:cursor-pointer hover:text-blue-500"}>
+                                <NavLink to="/MyOrders" className={({ isActive }) => isActive ? "bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent font-bold" : "text-gray-800 font-bold text-lg hover:cursor-pointer hover:text-blue-500"}>
                                     My Orders
                                 </NavLink>
-                                <NavLink to="/profile" className={({ isActive }) => isActive ? "flex items-center gap-2 bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent font-bold"
-                                    : "flex items-center gap-2 text-gray-800 font-bold text-lg hover:cursor-pointer hover:text-blue-500"}>
-                                    {user?.photoURL && (
-                                        <img src={user.photoURL} alt="Profile" className="w-7 h-7 rounded-full" />
-                                    )}
-                                    My Profile
-                                </NavLink>
-                               
+
+
                             </>
                         )
                     }
@@ -132,7 +126,15 @@ const Navbar = () => {
             </div>
             {
                 user && <div className="navbar-end">
-                    <button onClick={handleSignOut} className="btn bg-linear-to-r from-blue-600 to-cyan-600 text-white w-20 rounded-lg font-bold">Logout</button>
+                    <div className='flex gap-2'>
+                        <NavLink to="/profile" className={({ isActive }) => isActive ? "flex items-center gap-2 bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent font-bold"
+                        : "flex items-center gap-2 text-gray-800 font-bold text-lg hover:cursor-pointer hover:text-blue-500"}>
+                        {user?.photoURL && (
+                            <img src={user.photoURL} alt="Profile" className="w-12 h-12 rounded-full" />
+                        )}
+                    </NavLink>
+                    <button onClick={handleSignOut} className="btn mt-1 bg-linear-to-r from-blue-600 to-cyan-600 text-white w-20 rounded-lg font-bold">Logout</button>
+                    </div>
                 </div>
             }
             {
