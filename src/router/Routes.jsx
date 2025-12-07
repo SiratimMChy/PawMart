@@ -18,6 +18,8 @@ import Food from "../pages/Food";
 import Accessories from "../pages/Accessories";
 import CareProducts from "../pages/CareProducts";
 import LatestListings from "../pages/LatestListings";
+import WhyAdopt from "../pages/WhyAdopt";
+import PetHeroes from "../pages/PetHeros";
 
 
 
@@ -93,6 +95,14 @@ const router = createBrowserRouter([
             {
                 path: '/latestListing',
                 element: <LatestListings />
+            },
+            {
+                path: '/whyadopt',
+                element: <WhyAdopt />
+            },
+             {
+                path: '/petheros',
+                element: <PetHeroes/>
             },
         ]
     },

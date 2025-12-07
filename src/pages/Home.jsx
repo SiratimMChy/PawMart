@@ -2,6 +2,8 @@ import React from 'react';
 import Slider from '../component/Slider';
 import CategoryCards from './CategoryCards';
 import LatestListings from './LatestListings';
+import WhyAdopt from './WhyAdopt';
+import PetHeroes from './PetHeros';
 
 const Home = () => {
     return (
@@ -10,6 +12,8 @@ const Home = () => {
             <Slider/>
             <CategoryCards/>
             <LatestListings/>
+            <PetHeroes/>
+            <WhyAdopt/>
         </div>
     );
 };

@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import axios from 'axios';
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 const AddListing = () => {
 
@@ -42,9 +43,28 @@ const AddListing = () => {
 
         console.log(fromData);
 
-        axios.post("http://localhost:3000/listings", fromData).then(res => {
-            console.log(res);
-        });
+        axios.post("http://localhost:3000/listings", fromData)
+            .then(res => {
+                console.log(res);
+                if (res.data.acknowledged) {
+                    Swal.fire({
+                        title: "Successfully Adding Item on listing",
+                        icon: "success",
+                        draggable: true
+                    });
+                    form.reset();
+                }
+            })
+            .catch(err => {
+                console.log(err);
+
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
+                });
+
+            });
     };
 
 

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import { Link } from 'react-router';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const MyListings = () => {
     const [myListings, setMyListsings] = useState([]);
@@ -18,13 +19,36 @@ const MyListings = () => {
     }, [user?.email]);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:3000/delete/${id}`)
-            .then(res => {
-                console.log(res.data);
-                const remaining = myListings.filter(listing => listing._id !== id);
-                setMyListsings(remaining);
-            })
-            .catch(err => console.log(err));
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axios.delete(`http://localhost:3000/delete/${id}`)
+                    .then(res => {
+                        console.log(res.data);
+                        if (res.data.deletedCount == 1) {
+                            const remaining = myListings.filter(listing => listing._id !== id);
+                            setMyListsings(remaining);
+                        }
+
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    });
+                Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                });
+            }
+        });
+
     }
     return (
 
@@ -78,7 +102,7 @@ const MyListings = () => {
                                     <div className="flex gap-2">
                                         <button onClick={() => handleDelete(listing?._id)} className="btn bg-red-600 btn-sm w-20 text-white font-semibold">Delete</button>
                                         <Link to={`/UpdateDetails/${listing._id}`}>
-                                        <button className="btn bg-blue-600 btn-sm w-20 text-white font-semi">Edit</button></Link>
+                                            <button className="btn bg-blue-600 btn-sm w-20 text-white font-semi">Edit</button></Link>
                                     </div>
                                 </td>
                             </tr>

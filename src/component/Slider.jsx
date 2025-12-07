@@ -41,8 +41,6 @@ const Slider = () => {
                                     <Typewriter
                                         words={slide.tagline}
                                         loop={0}
-                                        cursor
-                                        cursorStyle="|"
                                         typeSpeed={70}
                                         deleteSpeed={50}
                                         delaySpeed={2000}
