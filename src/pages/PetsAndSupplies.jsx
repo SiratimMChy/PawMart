@@ -6,7 +6,7 @@ const PetsAndSupplies = () => {
     const [category, setCategory] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
     useEffect(() => {
-        fetch(`http://localhost:3000/listings?category=${category}`)
+        fetch(`https://pawmart-beige.vercel.app/listings?category=${category}`)
             .then(res => res.json())
             .then(data => {
                 setServices(data);

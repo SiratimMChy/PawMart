@@ -43,7 +43,7 @@ const AddListing = () => {
 
         console.log(fromData);
 
-        axios.post("http://localhost:3000/listings", fromData)
+        axios.post("https://pawmart-beige.vercel.app/listings", fromData)
             .then(res => {
                 console.log(res);
                 if (res.data.acknowledged) {

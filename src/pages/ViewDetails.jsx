@@ -10,7 +10,7 @@ const ViewDetails = () => {
     const { user } = useContext(AuthContext);
     const [quantity, setQuantity] = useState("");
     useEffect(() => {
-        fetch(`http://localhost:3000/listings/${id}`)
+        fetch(`https://pawmart-beige.vercel.app/listings/${id}`)
             .then(res => res.json())
             .then(data => {
                 setService(data);
@@ -48,7 +48,7 @@ const ViewDetails = () => {
             phone,
             additionalNotes,
         };
-        axios.post("http://localhost:3000/orders", orderData)
+        axios.post("https://pawmart-beige.vercel.app/orders", orderData)
             .then(res => {
                 console.log(res);
                 toast.success("Order placed successfully!");

@@ -8,7 +8,7 @@ const MyOrders = () => {
     const { user } = useContext(AuthContext);
     const [myOrders, setMyOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3000/orders?email=${user.email}`)
+        fetch(`https://pawmart-beige.vercel.app/orders?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyOrders(data);

@@ -7,7 +7,7 @@ const Pets = () => {
 
     useEffect(() => {
         document.title = "Pets & Supplies";
-        fetch('http://localhost:3000/listings?category=Pets')
+        fetch('https://pawmart-beige.vercel.app/listings?category=Pets')
             .then(res => res.json())
             .then(data => {
                 setServices(data);

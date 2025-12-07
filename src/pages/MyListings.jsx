@@ -10,7 +10,7 @@ const MyListings = () => {
     const [myListings, setMyListsings] = useState([]);
     const { user } = useContext(AuthContext);
     useEffect(() => {
-        fetch(`http://localhost:3000/my-listings?email=${user?.email}`)
+        fetch(`https://pawmart-beige.vercel.app/my-listings?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyListsings(data);
@@ -29,7 +29,7 @@ const MyListings = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:3000/delete/${id}`)
+                axios.delete(`https://pawmart-beige.vercel.app/delete/${id}`)
                     .then(res => {
                         console.log(res.data);
                         if (res.data.deletedCount == 1) {

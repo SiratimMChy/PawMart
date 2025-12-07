@@ -11,7 +11,7 @@ const UpdateDetails = () => {
     const [category, setCategory] = useState(listingDetails?.category);
     const navigate = useNavigate();
     useEffect(() => {
-        axios.get(`http://localhost:3000/listings/${id}`)
+        axios.get(`https://pawmart-beige.vercel.app/listings/${id}`)
             .then(res => {
                 setListingDetails(res.data);
                 setCategory(res.data.category);
@@ -43,7 +43,7 @@ const UpdateDetails = () => {
             email,
             createAt: listingDetails?.createAt,
         };
-        axios.put(`http://localhost:3000/update/${id}`, formData)
+        axios.put(`https://pawmart-beige.vercel.app/update/${id}`, formData)
             .then(res => {
                 console.log(res.data);
                 navigate('/MyListing');
