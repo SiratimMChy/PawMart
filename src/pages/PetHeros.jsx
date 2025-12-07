@@ -33,18 +33,25 @@ const PetHeroes = () => {
     ];
 
     return (
-        <section className="px-6 py-16 bg-blue-50 mt-10">
+        <section className="px-6 py-16 bg-base-200 mt-10 transition-colors duration-300">
             <div className="max-w-7xl mx-auto">
-                <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">
-                    Meet Our <span className="text-blue-600">Pet Heroes</span>
+
+              
+                <h2 className="text-4xl font-bold text-center text-base-content mb-4">
+                    Meet Our <span className="text-primary">Pet Heroes</span>
                 </h2>
-                <p className="text-center text-gray-600 max-w-2xl mx-auto text-lg mb-12">
+
+                <p className="text-center text-base-content/70 max-w-2xl mx-auto text-lg mb-12">
                     Dedicated professionals committed to the health and happiness of every animal.
                 </p>
 
+           
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {heroes.map((hero) => (
-                        <div key={hero.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div
+                            key={hero.id}
+                            className="bg-base-100 rounded-lg shadow-md overflow-hidden border border-base-content/10 hover:shadow-xl transition-all duration-300"
+                        >
                             <img
                                 src={hero.image}
                                 alt={hero.name}
@@ -52,13 +59,15 @@ const PetHeroes = () => {
                             />
 
                             <div className="p-5">
-                                <h3 className="font-bold text-xl text-gray-900 mb-2">
+                                <h3 className="font-bold text-xl text-base-content mb-2">
                                     {hero.name}
                                 </h3>
-                                <p className="text-blue-600 font-medium text-sm mb-1">
+
+                                <p className="text-primary font-medium text-sm mb-1">
                                     {hero.specialization}
                                 </p>
-                                <p className="text-gray-500 text-sm">
+
+                                <p className="text-base-content/60 text-sm">
                                     {hero.experience}
                                 </p>
                             </div>

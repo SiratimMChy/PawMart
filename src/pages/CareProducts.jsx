@@ -24,7 +24,7 @@ const CareProducts = () => {
                            key={Service._id}
                            initial={{ scale: 0 }}
                            animate={{ scale: 1, transition: { duration: 0.5 } }}
-                           className="card bg-base-100 w-full max-w-lg shadow-sm rounded-xl"
+                           className="card bg-base-100 w-full max-w-lg shadow-sm rounded-xl border border-base-content/10"
                        >
                            <figure className="overflow-hidden rounded-t-xl">
                                <img

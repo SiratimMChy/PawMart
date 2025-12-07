@@ -41,7 +41,7 @@ const CategoryCards = () => {
       {categories.map(cat => (
         <div
           key={cat.value}
-          className="relative group w-full shadow-md rounded-xl overflow-hidden h-64"
+          className="relative group w-full shadow-md rounded-xl overflow-hidden h-64 border border-base-content/10"
           style={{
             backgroundImage: `url(${cat.bgImage})`,
             backgroundSize: 'cover',

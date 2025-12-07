@@ -13,13 +13,13 @@ const LatestListings = () => {
     return (
         <section className="m-4 pb-25 p-2 ">
             <h1 className="text-3xl font-bold mb-6 text-center">Latest Listings</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-10 justify-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-10  justify-items-center">
                 {listings.map(listing => (
                     <Motion.div
                         key={listing._id}
                         initial={{ scale: 0 }}
                         animate={{ scale: 1, transition: { duration: 0.5 } }}
-                        className="card bg-base-100 w-full max-w-lg shadow-sm"
+                        className="card bg-base-100 w-full max-w-lg shadow-sm border border-base-content/10"
                     >
                         <figure>
                             <img
