@@ -66,32 +66,32 @@ const ViewDetails = () => {
 
 
     return (
-        <div className="flex justify-center p-10 pb-25">
+        <div className="flex justify-center p-4  lg:p-10 pb-25">
             <title>Listing Details</title>
             {service ? (
-                <div className="max-w-4xl w-full bg-white shadow-lg rounded-2xl overflow-hidden ">
+                <div className="lg:max-w-4xl w-4xl lg:w-full bg-white shadow-lg rounded-2xl overflow-hidden ">
                     <img
                         src={service.imageUrl}
                         alt={service.name}
                         className="w-full h-[550px] object-cover"
                     />
-                    <div className="p-6">
-                        <h1 className="text-2xl font-bold mb-2">{service.name}</h1>
+                    <div className="p-2 lg:p-6">
+                        <h1 className="text-2xl text-black font-bold mb-2">{service.name}</h1>
                         <div className="mb-4 text-gray-800 space-y-2">
-                            <h5 className="flex gap-2 text-lg">
+                            <h5 className="flex gap-2 text-[16px] lg:text-lg">
                                 <span className="font-semibold">Category: </span>
                                 <span className="text-[15px] mt-1"> {service.category}</span>
                             </h5>
-                            <h5 className="text-lg">
+                            <h5 className="text-[16px] lg:text-lg">
                                 <span className="font-semibold">Description: </span> <span className="text-[15px]">{service.description}</span>
                             </h5>
-                            <h5 className="text-lg">
-                                <span className="font-semibold">Owner's Email: </span> <span className="text-[15px]">{service.email}</span>
+                            <h5 className="text-[16px] lg:text-lg">
+                                <span className="font-semibold">Owner's Email:</span> <span className="text-[15px]">{service.email}</span>
                             </h5>
-                            <h5 className="text-lg">
+                            <h5 className="text-[16px] lg:text-lg">
                                 <span className="font-semibold">Price: </span> <span className="text-[15px]">{service.price}</span>
                             </h5>
-                            <h5 className="text-lg">
+                            <h5 className="text-[16px] lg:text-lg">
                                 <span className="font-semibold">Location: </span> <span className="text-[15px]">{service.location}</span>
                             </h5>
                         </div>
@@ -117,12 +117,12 @@ const ViewDetails = () => {
 
                                         <div className="flex flex-col md:col-span-2">
                                             <label className="label">Email</label>
-                                            <input name='email' defaultValue={user?.email} type="email" className="input" placeholder="Email" />
+                                            <input name='email' readOnly defaultValue={user?.email} type="email" className="input" placeholder="Email" />
                                         </div>
 
                                         <div className="flex flex-col">
                                             <label className="label">Product/Listing ID</label>
-                                            <input name='productId' type="text" defaultValue={service?._id} className="input" placeholder="Product or listing ID" />
+                                            <input readOnly name='productId' type="text" defaultValue={service?._id} className="input" placeholder="Product or listing ID" />
                                         </div>
 
                                         <div className="flex flex-col">

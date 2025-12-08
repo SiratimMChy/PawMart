@@ -3,6 +3,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { useParams } from 'react-router';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import Swal from 'sweetalert2';
 
 const UpdateDetails = () => {
     const { user } = useContext(AuthContext);
@@ -47,14 +48,19 @@ const UpdateDetails = () => {
             .then(res => {
                 console.log(res.data);
                 navigate('/MyListing');
+                Swal.fire({
+                    title: "Successfully Updated",
+                    icon: "success"
+                });
+                form.reset();
             })
             .catch(err => {
                 console.log(err)
             });
     }
-    return (
-        <div className="max-w-xl mx-auto bg-white shadow-lg rounded-2xl pt-6 py-10 px-8 mt-10 h-full mb-10 ">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
+      return (
+        <div className="max-w-xl mx-auto bg-base-100 shadow-lg rounded-2xl p-8 mt-10 mb-10 border border-base-content/10">
+            <h2 className="text-3xl font-bold mb-6 text-center">
                 Update Listing
             </h2>
 
@@ -62,12 +68,12 @@ const UpdateDetails = () => {
 
                 {/* Name */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Product/Pet Name</label>
+                    <label className="label">Product/Pet Name</label>
                     <input
                         defaultValue={listingDetails?.name}
                         type="text"
                         name="name"
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="input input-bordered w-full"
                         placeholder="Enter name"
                         required
                     />
@@ -75,12 +81,12 @@ const UpdateDetails = () => {
 
                 {/* Category */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Category</label>
+                    <label className="label">Category</label>
                     <select
                         value={category}
                         name="category"
                         onChange={(e) => setCategory(e.target.value)}
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="select select-bordered w-full"
                     >
                         <option value="Pets">Pets</option>
                         <option value="Food">Food</option>
@@ -91,23 +97,23 @@ const UpdateDetails = () => {
 
                 {/* Price */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Price</label>
+                    <label className="label">Price</label>
                     <input
                         defaultValue={listingDetails?.price}
                         type="number"
                         name="price"
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="input input-bordered w-full"
                     />
                 </div>
 
                 {/* Location */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Location</label>
+                    <label className="label">Location</label>
                     <input
                         defaultValue={listingDetails?.location}
                         type="text"
                         name="location"
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="input input-bordered w-full"
                         placeholder="Enter location"
                         required
                     />
@@ -115,11 +121,11 @@ const UpdateDetails = () => {
 
                 {/* Description */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Description</label>
+                    <label className="label">Description</label>
                     <textarea
                         defaultValue={listingDetails?.description}
                         name="description"
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="textarea textarea-bordered w-full"
                         rows="2"
                         placeholder="Write details..."
                         required
@@ -128,12 +134,12 @@ const UpdateDetails = () => {
 
                 {/* Image URL */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Image URL</label>
+                    <label className="label">Image URL</label>
                     <input
                         defaultValue={listingDetails?.imageUrl}
                         type="url"
                         name="imageUrl"
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="input input-bordered w-full"
                         placeholder="https://example.com/image.jpg"
                         required
                     />
@@ -141,32 +147,32 @@ const UpdateDetails = () => {
 
                 {/* Date */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Pick Up Date</label>
+                    <label className="label">Pick Up Date</label>
                     <input
                         defaultValue={listingDetails?.date}
                         type="date"
                         name="date"
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="input input-bordered w-full"
                         required
                     />
                 </div>
 
                 {/* Email */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Email</label>
+                    <label className="label">Email</label>
                     <input
                         value={user?.email}
                         type="email"
                         name="email"
                         readOnly
-                        className="mt-1 w-full p-3 border rounded-lg bg-gray-100 cursor-not-allowed"
+                        className="input input-bordered w-full bg-base-200"
                     />
                 </div>
 
                 {/* Submit */}
                 <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition"
+                    className="btn bg-linear-to-r from-blue-600 to-cyan-600 w-full text-white"
                 >
                     Update Listing
                 </button>
@@ -174,7 +180,6 @@ const UpdateDetails = () => {
         </div>
     );
 };
-
 export default UpdateDetails;
 
 

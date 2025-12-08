@@ -1,89 +1,66 @@
-import React from 'react';
-import { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import axios from 'axios';
-import { useState } from 'react';
 import Swal from 'sweetalert2';
 
 const AddListing = () => {
-
     const { user } = useContext(AuthContext);
     const [price, setPrice] = useState(0);
+
     const categoryChange = (e) => {
         const category = e.target.value;
-        if (category === "Pets") {
-            setPrice(0);
-        } else {
-            setPrice("");
-        }
+        if (category === "Pets") setPrice(0);
+        else setPrice("");
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
-        const name = form.name.value;
-        const category = form.category.value;
-        const priceValue = price === "" ? 0 : parseInt(price);
-        const location = form.location.value;
-        const description = form.description.value;
-        const imageUrl = form.imageUrl.value;
-        const date = form.date.value;
-        const email = form.email.value;
 
         const fromData = {
-            name,
-            category,
-            price: priceValue,
-            location,
-            description,
-            imageUrl,
-            date,
-            email,
+            name: form.name.value,
+            category: form.category.value,
+            price: price === "" ? 0 : parseInt(price),
+            location: form.location.value,
+            description: form.description.value,
+            imageUrl: form.imageUrl.value,
+            date: form.date.value,
+            email: form.email.value,
         };
-
-        console.log(fromData);
 
         axios.post("https://pawmart-beige.vercel.app/listings", fromData)
             .then(res => {
-                console.log(res);
                 if (res.data.acknowledged) {
                     Swal.fire({
-                        title: "Successfully Adding Item on listing",
-                        icon: "success",
-                        draggable: true
+                        title: "Successfully Added Listing",
+                        icon: "success"
                     });
                     form.reset();
                 }
             })
             .catch(err => {
-                console.log(err);
-
+                console.log(err)
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
-                    text: "Something went wrong!",
+                    text: "Something went wrong!"
                 });
-
             });
     };
 
-
-
     return (
-        <div className="max-w-xl mx-auto bg-white shadow-lg rounded-2xl pt-6 py-10 px-8 mt-10 h-full mb-10 ">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">
-                Create New Listing
-            </h2>
+        <div className="max-w-xl mx-auto bg-base-100 shadow-lg rounded-2xl p-8 mt-12 border border-base-content/10 mb-10">
+            <h2 className="text-3xl font-bold mb-6 text-center">Create New Listing</h2>
 
             <form onSubmit={handleSubmit} className="space-y-3">
 
                 {/* Name */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Product/Pet Name</label>
+                    <label className="label">Product / Pet Name</label>
                     <input
                         type="text"
                         name="name"
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="input input-bordered w-full"
                         placeholder="Enter name"
                         required
                     />
@@ -91,11 +68,11 @@ const AddListing = () => {
 
                 {/* Category */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Category</label>
+                    <label className="label">Category</label>
                     <select
                         name="category"
                         onChange={categoryChange}
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="select select-bordered w-full"
                     >
                         <option value="Pets">Pets</option>
                         <option value="Food">Food</option>
@@ -106,23 +83,23 @@ const AddListing = () => {
 
                 {/* Price */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Price</label>
+                    <label className="label">Price</label>
                     <input
                         type="number"
                         name="price"
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="input input-bordered w-full"
                     />
                 </div>
 
                 {/* Location */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Location</label>
+                    <label className="label">Location</label>
                     <input
                         type="text"
                         name="location"
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="input input-bordered w-full"
                         placeholder="Enter location"
                         required
                     />
@@ -130,23 +107,23 @@ const AddListing = () => {
 
                 {/* Description */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Description</label>
+                    <label className="label">Description</label>
                     <textarea
                         name="description"
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="textarea textarea-bordered w-full"
                         rows="2"
                         placeholder="Write details..."
                         required
-                    ></textarea>
+                    />
                 </div>
 
                 {/* Image URL */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Image URL</label>
+                    <label className="label">Image URL</label>
                     <input
                         type="url"
                         name="imageUrl"
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="input input-bordered w-full"
                         placeholder="https://example.com/image.jpg"
                         required
                     />
@@ -154,31 +131,31 @@ const AddListing = () => {
 
                 {/* Date */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Pick Up Date</label>
+                    <label className="label">Pick Up Date</label>
                     <input
                         type="date"
                         name="date"
-                        className="mt-1 w-full p-3 border rounded-lg focus:ring focus:ring-blue-300"
+                        className="input input-bordered w-full"
                         required
                     />
                 </div>
 
                 {/* Email */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700">Email</label>
+                    <label className="label">Email</label>
                     <input
                         value={user?.email}
+                        readOnly
                         type="email"
                         name="email"
-                        readOnly
-                        className="mt-1 w-full p-3 border rounded-lg bg-gray-100 cursor-not-allowed"
+                        className="input input-bordered w-full bg-base-200"
                     />
                 </div>
 
-                {/* Submit */}
+                {/* Submit Button */}
                 <button
                     type="submit"
-                    className="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition"
+                    className="btn bg-linear-to-r from-blue-600 to-cyan-600 w-full text-white"
                 >
                     Submit Listing
                 </button>

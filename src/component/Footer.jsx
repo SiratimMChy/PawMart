@@ -4,10 +4,10 @@ import logo from '../assets/logo.png';
 
 const Footer = () => {
     return (
-        <div className="w-full bg-base-100 px-6 pt-5 pb-5 ">
+        <div className="w-full bg-base-400 px-6 pt-5 pb-5 border-t border-base-300">
             <footer className="footer sm:footer-horizontal bg-base-100 text-base-content p-10">
 
-              
+
                 <aside>
                     <div className="flex items-center gap-2 font-extrabold text-2xl bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
                         <img src={logo} alt="PawMart Logo" className="w-10 h-10" />
@@ -19,7 +19,7 @@ const Footer = () => {
                     </p>
                 </aside>
 
-              
+
                 <nav>
                     <h6 className="text-base-content text-lg font-semibold mb-2">Useful Links</h6>
 
@@ -31,23 +31,23 @@ const Footer = () => {
                     </Link>
 
                     <Link
-                        to="/contact"
+                        to="/profile"
                         className="text-base-content text-sm hover:text-primary transition-colors duration-200 block"
                     >
-                        Contact
+                        Profile
                     </Link>
 
                     <Link
-                        to="/terms"
+                        to="/petheros"
                         className="text-base-content text-sm hover:text-primary transition-colors duration-200 block"
                     >
-                        Terms & Conditions
+                        Pet Heros
                     </Link>
                 </nav>
 
             </footer>
 
-        
+
             <div className="border-t border-base-content/20 mt-8 pt-4 text-center text-base-content text-sm">
                 © 2025 PawMart — All Rights Reserved.
             </div>

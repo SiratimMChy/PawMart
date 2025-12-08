@@ -30,7 +30,7 @@ const slides = [
 
 const Slider = () => {
     return (
-        <div className="w-full px-5 mt-2">
+        <div className="w-full px-2 lg:px-5 mt-2">
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper rounded-xl ">
                 {slides.map((slide, index) => (
                     <SwiperSlide key={index}>
