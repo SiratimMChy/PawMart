@@ -26,7 +26,6 @@ const LatestListings = () => {
                                 src={listing?.imageUrl}
                                 alt={listing?.name}
                                 loading="lazy"
-                                className="h-48 w-full object-cover"
                             />
                         </figure>
 
