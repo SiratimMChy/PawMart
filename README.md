@@ -2,12 +2,14 @@ Name- PawMart
 
 Live Website Link Client-side: https://pawmart-c9875.web.app
 
-⦁	Latest Listing
+## Features
 
-⦁	Oders
+⦁Add and Manage Listings
 
-⦁	Myorder
+⦁Latest Listings
 
-⦁	Add Listing
+⦁Order Management
 
-⦁	Toggle Theme
+⦁ser-Specific Listings
+
+⦁RESTful API
