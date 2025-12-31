@@ -4,7 +4,7 @@
 PawMart is a **full-stack MERN application** designed to simplify and promote responsible pet adoption while supporting the buying and selling of pet care products. It connects **pet owners, breeders, shop owners, and adopters** in a single, user-friendly digital marketplace. Users can manage listings, view latest pets or products, and handle orders efficiently.
 
 ## 🌐 Live Project
-[Client-side Live Demo](https://pawmart-c9875.web.app)
+[www.pawmart.com](https://pawmart-c9875.web.app)
 
 ## 🛠 Technologies Used
 - **Frontend:** React.js, Tailwind CSS  
