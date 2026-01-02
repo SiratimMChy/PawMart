@@ -4,12 +4,12 @@ import logo from '../assets/logo.png';
 
 const Footer = () => {
     return (
-        <div className="w-full bg-base-400 px-6 pt-5 pb-5 border-t border-base-300">
+        <div className="w-full bg-base-400 px-6 pt-5 pb-5 border-t border-base-300 lg:px-25">
             <footer className="footer sm:footer-horizontal bg-base-100 text-base-content p-10">
 
 
                 <aside>
-                    <div className="flex items-center gap-2 font-extrabold text-2xl bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    <div className="flex items-center gap-2 font-extrabold text-2xl  text-primary ">
                         <img src={logo} alt="PawMart Logo" className="w-10 h-10" />
                         <span className="font-bold text-lg">PawMart</span>
                     </div>

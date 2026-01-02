@@ -20,6 +20,8 @@ import CareProducts from "../pages/CareProducts";
 import LatestListings from "../pages/LatestListings";
 import WhyAdopt from "../pages/WhyAdopt";
 import PetHeroes from "../pages/PetHeros";
+import ModernFAQSection from "../pages/ModernFAQSection";
+import PetCareTips from "../pages/PetCareTips";
 
 
 
@@ -104,6 +106,14 @@ const router = createBrowserRouter([
                 path: '/petheros',
                 element: <PetHeroes/>
             },
+            {
+                path:'/faq',
+                element:<ModernFAQSection/>
+            },
+            {
+                path:'/tips',
+                element:<PetCareTips/>
+            }
         ]
     },
 ]);

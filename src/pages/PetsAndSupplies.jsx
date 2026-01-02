@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { motion as Motion } from "motion/react"
+import { TbCurrencyTaka } from "react-icons/tb";
+import { MdOutlineCategory, MdOutlineLocationOn } from "react-icons/md";
 const PetsAndSupplies = () => {
     const [services, setServices] = useState([]);
     const [category, setCategory] = useState('');
@@ -44,50 +46,52 @@ const PetsAndSupplies = () => {
                 </select>
             </div>
 
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-10 justify-items-center'>
-                {
-                    Services.map(Service =>
-                        <Motion.div
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1, transition: { duration: 2 } }}
-                            key={Service._id}
-                            className="card bg-base-100 w-full max-w-lg shadow-sm border border-base-content/10"
-                        >
-                            <figure>
-                                <img
-                                    src={Service?.imageUrl}
-                                    alt={Service?.name}
-                                    loading="lazy"
-                                />
-                            </figure>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center mt-4 mb-8">
+                {Services.map(service => (
+                    <Motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1, transition: { duration: 2 } }}
+                        key={service._id}
+                        className="card bg-base-100 w-full max-w-lg shadow-sm border border-base-content/10 flex flex-col h-full"
+                    >
+                        <figure>
+                            <img
+                                src={service?.imageUrl}
+                                alt={service?.name}
+                                loading="lazy"
+                                className="w-full h-64 object-cover"
+                            />
+                        </figure>
 
-                            <div className="card-body mt-2">
-                                <h2 className="card-title mb-2">{Service?.name}</h2>
-
-                                <div className='flex justify-between'>
-                                    <h5>
-                                        <span className="font-semibold">Category:</span> {Service?.category}
-                                    </h5>
-                                    <h5>
-                                        <span className="font-semibold">Location:</span> {Service?.location}
-                                    </h5>
-                                </div>
-
+                        <div className="card-body p-5 flex-1 flex flex-col justify-between">
+                            <div>
+                                <h2 className="card-title mb-2 font-bold">{service?.name}</h2>
                                 <div className="flex justify-between">
-
-                                    <h2 className="font-bold text-2xl">{Service?.price} ৳</h2>
-                                    <Link
-                                        to={`/details/${Service?._id}`}
-                                        className="btn bg-linear-to-r from-blue-600 to-cyan-600 text-white rounded-lg"
-                                    >
-                                        See Details
-                                    </Link>
+                                    <h5 className="flex items-center gap-1 text-lg font-medium">
+                                        <MdOutlineCategory className="w-5 h-5" /> {service?.category}
+                                    </h5>
+                                    <h5 className="flex items-center gap-1 text-lg font-medium">
+                                        <MdOutlineLocationOn className="w-5 h-5" /> {service?.location}
+                                    </h5>
                                 </div>
                             </div>
-                        </Motion.div>
-                    )
-                }
 
+                            <div className="flex justify-between mt-4 items-center">
+                                <h2 className="flex items-center font-bold text-2xl">
+                                    <span>{service?.price}</span>
+                                    <TbCurrencyTaka className="w-6 h-6" />
+                                </h2>
+
+                                <Link
+                                    to={`/details/${service?._id}`}
+                                    className="btn bg-linear-to-r from-blue-600 to-cyan-600 text-white rounded-lg"
+                                >
+                                    See Details
+                                </Link>
+                            </div>
+                        </div>
+                    </Motion.div>
+                ))}
             </div>
 
         </div>

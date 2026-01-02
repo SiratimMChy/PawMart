@@ -38,7 +38,7 @@ const PetHeroes = () => {
 
               
                 <h2 className="text-4xl font-bold text-center text-base-content mb-4">
-                    Meet Our <span className="text-primary">Pet Heroes</span>
+                    Meet Our <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Pet Heroes</span>
                 </h2>
 
                 <p className="text-center text-base-content/70 max-w-2xl mx-auto text-lg mb-12">

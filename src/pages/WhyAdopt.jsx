@@ -1,4 +1,4 @@
-import { Heart, Home, PawPrint, Sparkles } from 'lucide-react';
+import { Heart, Home, PawPrint, Sparkles, Stethoscope } from 'lucide-react';
 import React from 'react';
 
 const WhyAdopt = () => {
@@ -21,6 +21,12 @@ const WhyAdopt = () => {
             description:
                 "Welcome a loyal companion who brings endless joy, affection, and meaningful moments into your everyday life.",
         },
+        {
+            icon: Stethoscope,
+            title: "Health-Checked & Verified Pets",
+            description:
+                "All listed pets undergo basic health checks and vaccinations, ensuring safer and more confident adoption decisions.",
+        },
     ];
 
     return (
@@ -34,41 +40,44 @@ const WhyAdopt = () => {
 
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <div className="inline-flex items-center gap-2 bg-linear-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
                         <Sparkles className="w-4 h-4" />
                         Why Choose PawMart
                     </div>
 
-                    <h2 className="text-5xl font-extrabold mb-6 text-base-content">
-                        Adopt with <span className="text-primary">Confidence</span>
+                    <h2 className="text-4xl font-extrabold mb-6 text-base-content">
+                        Adopt with <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Confidence</span>
                     </h2>
 
                     <p className="text-base-content/70 max-w-3xl mx-auto text-lg leading-relaxed">
-                        At PawMart, we believe every pet deserves a loving home. Adoption doesn’t just save lives—it enriches yours.
+                        At PawMart, we believe every pet deserves a loving home. Adoption doesn't just save lives—it enriches yours.
                         Join thousands of families who've found their perfect companion.
                     </p>
                 </div>
 
                 {/* Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center mt-4 mb-8">
                     {benefits.map((benefit, index) => {
                         const Icon = benefit.icon;
                         return (
                             <div
                                 key={index}
-                                className="group bg-base-100 rounded-3xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-base-content/10 w-full max-w-lg"
+                                className="card bg-base-100 w-full max-w-lg shadow-sm border border-base-content/10 flex flex-col h-full p-8"
                             >
-                                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                {/* Icon */}
+                                <div className="w-16 h-16 bg-linear-to-r from-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                                     <Icon className="w-8 h-8 text-white" />
                                 </div>
 
-                                <h3 className="text-2xl font-bold mb-3 text-base-content">
-                                    {benefit.title}
-                                </h3>
-
-                                <p className="text-base-content/70 leading-relaxed">
-                                    {benefit.description}
-                                </p>
+                                {/* Title & Description */}
+                                <div className="flex-1">
+                                    <h3 className="text-xl font-bold text-base-content mb-3">
+                                        {benefit.title}
+                                    </h3>
+                                    <p className="text-base-content/70 text-sm leading-relaxed">
+                                        {benefit.description}
+                                    </p>
+                                </div>
                             </div>
                         );
                     })}

@@ -4,6 +4,7 @@ import CategoryCards from './CategoryCards';
 import LatestListings from './LatestListings';
 import WhyAdopt from './WhyAdopt';
 import PetHeroes from './PetHeros';
+import About from './About';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <LatestListings/>
             <PetHeroes/>
             <WhyAdopt/>
+            <About/>
         </div>
     );
 };
