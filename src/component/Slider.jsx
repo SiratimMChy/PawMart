@@ -32,7 +32,7 @@ const slides = [
 
 const Slider = () => {
     return (
-        <div className="w-full px-2 lg:px-25 mt-2">
+        <div className="w-full px-5  lg:px-25 mt-2">
             <Swiper
                 navigation={true}
                 pagination={{ clickable: true }}

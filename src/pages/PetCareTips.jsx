@@ -9,7 +9,7 @@ export default function ProfessionalPetCareTips() {
     const tips = [
         {
             id: 1,
-            title: "Nutrition Guide ", // 15 chars
+            title: "Nutrition Guide ", 
             category: "Dog",
             icon: Heart,
             color: "bg-linear-to-r from-blue-600 to-cyan-600",
@@ -20,7 +20,7 @@ export default function ProfessionalPetCareTips() {
         },
         {
             id: 2,
-            title: "Pet Vaccines", // 15 chars
+            title: "Pet Vaccines", 
             category: "All",
             icon: Award,
             color: "bg-linear-to-r from-blue-600 to-cyan-600",
@@ -31,7 +31,7 @@ export default function ProfessionalPetCareTips() {
         },
         {
             id: 3,
-            title: "Grooming Tips  ", // 15 chars
+            title: "Grooming Tips  ", 
             category: "Cat",
             icon: Smile,
             color: "bg-linear-to-r from-blue-600 to-cyan-600",
@@ -42,7 +42,7 @@ export default function ProfessionalPetCareTips() {
         },
         {
             id: 4,
-            title: "Home Prep Pets", // 15 chars
+            title: "Home Prep Pets", 
             category: "All",
             icon: Home,
             color: "bg-linear-to-r from-blue-600 to-cyan-600",
@@ -53,7 +53,7 @@ export default function ProfessionalPetCareTips() {
         },
         {
             id: 5,
-            title: "Exercise Needs ", // 15 chars
+            title: "Exercise Needs ", 
             category: "Dog",
             icon: Activity,
             color: "bg-linear-to-r from-blue-600 to-cyan-600",
@@ -64,7 +64,7 @@ export default function ProfessionalPetCareTips() {
         },
         {
             id: 6,
-            title: "Warning Signs ", // 15 chars
+            title: "Warning Signs ", 
             category: "All",
             icon: Heart,
             color: "bg-linear-to-r from-blue-600 to-cyan-600",
@@ -75,7 +75,7 @@ export default function ProfessionalPetCareTips() {
         },
         {
             id: 7,
-            title: "Winter Care  ", // 15 chars
+            title: "Winter Care  ", 
             category: "All",
             icon: Thermometer,
             color: "bg-linear-to-r from-blue-600 to-cyan-600",
@@ -86,7 +86,7 @@ export default function ProfessionalPetCareTips() {
         },
         {
             id: 8,
-            title: "Dental Care  ", // 15 chars
+            title: "Dental Care  ", 
             category: "Dog",
             icon: Smile,
             color: "bg-linear-to-r from-blue-600 to-cyan-600",
@@ -97,7 +97,7 @@ export default function ProfessionalPetCareTips() {
         },
         {
             id: 9,
-            title: "Bird Care Guide", // 15 chars
+            title: "Bird Care Guide", 
             category: "Bird",
             icon: Bird,
             color: "bg-linear-to-r from-blue-600 to-cyan-600",
@@ -108,7 +108,7 @@ export default function ProfessionalPetCareTips() {
         },
         {
             id: 10,
-            title: "Fish Tank Guide", // 15 chars
+            title: "Fish Tank Guide", 
             category: "Fish",
             icon: Fish,
             color: "bg-linear-to-r from-blue-600 to-cyan-600",
@@ -119,7 +119,7 @@ export default function ProfessionalPetCareTips() {
         },
         {
             id: 11,
-            title: "Pet Socializing", // 15 chars
+            title: "Pet Socializing", 
             category: "All",
             icon: Users,
             color: "bg-linear-to-r from-blue-600 to-cyan-600",
@@ -130,7 +130,7 @@ export default function ProfessionalPetCareTips() {
         },
         {
             id: 12,
-            title: "Pet Body Language", // 15 chars
+            title: "Pet Body Language", 
             category: "All",
             icon: Heart,
             color: "bg-linear-to-r from-blue-600 to-cyan-600",

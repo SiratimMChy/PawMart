@@ -50,7 +50,7 @@ const WhyAdopt = () => {
                     </h2>
 
                     <p className="text-base-content/70 max-w-3xl mx-auto text-lg leading-relaxed">
-                        At PawMart, we believe every pet deserves a loving home. Adoption doesn't just save lives—it enriches yours.
+                        At PawMart, we believe every pet deserves a loving home. Adoption doesn't just save lives it enriches yours.
                         Join thousands of families who've found their perfect companion.
                     </p>
                 </div>

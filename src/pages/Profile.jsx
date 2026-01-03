@@ -31,7 +31,7 @@ const Profile = () => {
 
     return (
         <div className="flex justify-center items-center min-h-screen px-4 py-10 md:py-20">
-             <div className="card w-full max-w-md md:max-w-lg bg-base-100 shadow-xl p-4 sm:p-6 md:p-8">
+             <div className="card w-full max-w-xl md:max-w-lg bg-base-100 shadow-xl p-4 sm:p-6 md:p-8">
                 <div className="flex flex-col items-center mb-6">
                     <div className="avatar">
                         <div className="w-28 rounded-full">
@@ -53,7 +53,7 @@ const Profile = () => {
                     isOpen && (
                         <form onSubmit={handleUpdate} className="flex flex-col gap-4 mt-6">
 
-                            <label className="label text-black text-sm font-semibold">Name</label>
+                            <label className="label  text-sm font-semibold">Name</label>
                             <input
                                 defaultValue={user?.displayName}
                                 name="name"
@@ -63,11 +63,12 @@ const Profile = () => {
 
                             />
 
-                            <label className="label text-black text-sm font-semibold mt-4">Photo URL</label>
+                            <label className="label text-sm font-semibold mt-4">Photo URL</label>
                             <input
                                 defaultValue={user?.photoURL}
                                 name="photoUrl"
                                 type="text"
+                                referrerPolicy="no-referrer"
                                 className="input input-bordered w-full"
                                 placeholder="Update Your Photo URL"
                             />

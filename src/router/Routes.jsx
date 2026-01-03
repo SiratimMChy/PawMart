@@ -8,11 +8,11 @@ import PrivateRoute from "./PrivateRoute";
 import ViewDetails from "../pages/ViewDetails";
 import ForgetPassword from "../pages/ForgetPassword";
 import ErrorPage from "../pages/ErrorPage";
-import AddListing from "../pages/AddListing";
-import MyListings from "../pages/MyListings";
+import AddListing from "../Dashboard/AddListing";
+import MyListings from "../Dashboard/MyListings";
 import PetsAndSupplies from "../pages/PetsAndSupplies";
 import UpdateDetails from "../pages/UpdateDetails";
-import MyOrders from "../pages/MyOrders";
+import MyOrders from "../Dashboard/MyOrders";
 import Pets from "../pages/Pets";
 import Food from "../pages/Food";
 import Accessories from "../pages/Accessories";
@@ -22,6 +22,9 @@ import WhyAdopt from "../pages/WhyAdopt";
 import PetHeroes from "../pages/PetHeros";
 import ModernFAQSection from "../pages/ModernFAQSection";
 import PetCareTips from "../pages/PetCareTips";
+import OrderPage from "../pages/OrderPage";
+import DashboardLayout from "../DashboardLayout/DashboardLayout";
+import DashboardHome from "../Dashboard/DashboardHome";
 
 
 
@@ -53,7 +56,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/details/:id',
-                element: <PrivateRoute> <ViewDetails /></PrivateRoute>
+                element: <ViewDetails />
             },
             {
                 path: '/forgetpassword/:email',
@@ -86,11 +89,11 @@ const router = createBrowserRouter([
                 path: '/Food/:category',
                 element: <Food />
             },
-             {
+            {
                 path: '/Accessories/:category',
                 element: <Accessories />
             },
-             {
+            {
                 path: '/CareProducts/:category',
                 element: <CareProducts />
             },
@@ -102,20 +105,51 @@ const router = createBrowserRouter([
                 path: '/whyadopt',
                 element: <WhyAdopt />
             },
-             {
+            {
                 path: '/petheros',
-                element: <PetHeroes/>
+                element: <PetHeroes />
             },
             {
-                path:'/faq',
-                element:<ModernFAQSection/>
+                path: '/faq',
+                element: <ModernFAQSection />
             },
             {
-                path:'/tips',
-                element:<PetCareTips/>
+                path: '/tips',
+                element: <PetCareTips />
+            }
+            ,
+            {
+                path: '/orderpage/:id',
+                element: <PrivateRoute><OrderPage /></PrivateRoute>
             }
         ]
     },
+    {
+        path: "/dashboard",
+        element: <PrivateRoute><DashboardLayout /></PrivateRoute>,
+        children: [
+            {
+                index: true,
+                element: <DashboardHome />,
+            },
+            {
+                path: 'AddListing',
+                element: <AddListing />
+            },
+            {
+                path: 'MyListing',
+                element: <MyListings />
+
+            },
+            {
+                path: 'MyOrders',
+                element: <MyOrders />
+
+            }
+            ,
+        ]
+    }
+
 ]);
 
 export default router;

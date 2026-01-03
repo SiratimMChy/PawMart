@@ -6,17 +6,18 @@ import auth from '../firebase/firebase.config';
 import { FcGoogle } from 'react-icons/fc';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router';
+import { User, Mail, Image, Lock } from 'lucide-react';
 
 const Register = () => {
     const { registrationWithEmailAndPassword, setUser, handleSignupWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         const name = e.target.name.value;
         const photoUrl = e.target.photoUrl.value;
-
 
         const uppercase = /[A-Z]/;
         const lowercase = /[a-z]/;
@@ -34,10 +35,8 @@ const Register = () => {
             return;
         }
 
-
         registrationWithEmailAndPassword(email, password)
             .then((userCredential) => {
-
                 updateProfile(auth.currentUser, {
                     displayName: name, photoURL: photoUrl
                 }).then(() => {
@@ -46,16 +45,12 @@ const Register = () => {
                     navigate('/login');
                 }).catch((error) => {
                     console.log(error);
-
                 });
-
             })
-
             .catch(error => {
                 toast.error(error.message);
                 console.error(error);
             })
-
     }
 
     const SignUpWithGoogle = () => {
@@ -73,42 +68,128 @@ const Register = () => {
     }
 
     return (
-        <div className='flex items-center justify-center pb-15 px-4 '>
+        <div className='flex items-center justify-center min-h-screen px-4 py-8 bg-linear-to-br from-blue-50 via-cyan-50 to-purple-50'>
             <title>Registration</title>
-            <div className="flex items-center justify-center w-full max-w-md p-4">
-                <form onSubmit={handleSubmit} className="fieldset bg-linear-to-r from-blue-50 to-blue-100 border-base-300 rounded-box w-full max-w-md border p-4 sm:p-6 md:p-8">
-                    <h2 className="text-2xl md:text-3xl font-bold text-black text-center">Regisration</h2>
-                    <fieldset className="fieldset space-y-1">
-                        <label className="label text-black text-sm font-semibold">Name</label>
-                        <input name='name' type="text" className="input validator w-full" placeholder="Enter Your Name" required />
-
-
-                        <label className="label text-black text-sm font-semibold">Email</label>
-                        <input name='email' type="email" className="input validator w-full" placeholder="Enter Your Email" required />
-
-
-                        <label className="label text-black text-sm font-semibold">PhotoUrl</label>
-                        <input name='photoUrl' type="link" className="input validator w-full" placeholder="Enter Your PhotoUrl" required />
-
-
-                        <span className="label text-black text-sm font-semibold">Password</span>
-                        <input name='password' type="password" className="input validator w-full" placeholder="Enter Your Password" required />
-                    </fieldset>
-
-
-                    <button onClick={SignUpWithGoogle} type="button" className="btn w-full mt-3 flex items-center justify-center">
-                        <FcGoogle className="text-2xl" />
-                    </button>
-
-
-                    <div className="flex gap-1 text-sm mt-3 justify-center">
-                        <span className='text-black'>Already have an account?</span>
-                        <Link className='text-blue-600' to="/login">Login</Link>
+            
+            <div className="w-full max-w-md -mt-5">
+                {/* Card Container */}
+                <div className="bg-base-100 rounded-2xl shadow-2xl border border-base-content/10 overflow-hidden">
+                    {/* Header with Gradient */}
+                    <div className="bg-linear-to-r from-blue-600 to-cyan-600 px-8 py-4 text-center">
+                        <h2 className="text-3xl font-bold text-white mb-2">Create Account</h2>
+                        <p className="text-white/90 text-sm">Join PawMart today!</p>
                     </div>
 
+                    {/* Form */}
+                    <form onSubmit={handleSubmit} className="p-8 space-y-4">
+                        {/* Name Field */}
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text font-semibold flex items-center gap-2">
+                                    <User className="w-4 h-4 text-blue-600" />
+                                    Full Name
+                                </span>
+                            </label>
+                            <input 
+                                name='name' 
+                                type="text" 
+                                className="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all" 
+                                placeholder="Enter your full name" 
+                                required 
+                            />
+                        </div>
 
-                    <button className="btn bg-linear-to-r from-blue-600 to-cyan-600 text-white font-semibold mt-4 w-full" type="submit">Register</button>
-                </form>
+                        {/* Email Field */}
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text font-semibold flex items-center gap-2">
+                                    <Mail className="w-4 h-4 text-blue-600" />
+                                    Email Address
+                                </span>
+                            </label>
+                            <input 
+                                name='email' 
+                                type="email" 
+                                className="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all" 
+                                placeholder="Enter your email" 
+                                required 
+                            />
+                        </div>
+
+                        {/* Photo URL Field */}
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text font-semibold flex items-center gap-2">
+                                    <Image className="w-4 h-4 text-blue-600" />
+                                    Photo URL
+                                </span>
+                            </label>
+                            <input 
+                                name='photoUrl' 
+                                type="url" 
+                                className="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all" 
+                                placeholder="Enter photo URL" 
+                                required 
+                            />
+                        </div>
+
+                        {/* Password Field */}
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text font-semibold flex items-center gap-2">
+                                    <Lock className="w-4 h-4 text-blue-600" />
+                                    Password
+                                </span>
+                            </label>
+                            <input 
+                                name='password' 
+                                type="password" 
+                                className="input input-bordered w-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-all" 
+                                placeholder="Create a strong password" 
+                                required 
+                            />
+                            <label className="label">
+                                <span className="label-text-alt text-xs text-base-content/60">
+                                    Must be 6+ characters with uppercase & lowercase
+                                </span>
+                            </label>
+                        </div>
+
+                        {/* Register Button */}
+                        <button 
+                            className="btn bg-linear-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold w-full border-none shadow-md hover:shadow-lg transition-all duration-300" 
+                            type="submit"
+                        >
+                            Register
+                        </button>
+
+                        {/* Divider */}
+                        <div className="divider text-sm text-base-content/60">OR</div>
+
+                        {/* Google Sign Up */}
+                        <button 
+                            onClick={SignUpWithGoogle} 
+                            type="button" 
+                            className="btn btn-outline w-full hover:bg-base-200 border-2 hover:border-blue-600 transition-all duration-300 flex items-center justify-center gap-2 group"
+                        >
+                            <FcGoogle className="text-2xl group-hover:scale-110 transition-transform" />
+                            <span className="font-semibold">Continue with Google</span>
+                        </button>
+
+                        {/* Login Link */}
+                        <div className="text-center pt-4 border-t border-base-content/10">
+                            <p className="text-sm text-base-content/70">
+                                Already have an account?{' '}
+                                <Link 
+                                    className='text-blue-600 font-semibold hover:text-blue-700 hover:underline transition-all' 
+                                    to="/login"
+                                >
+                                    Login Now
+                                </Link>
+                            </p>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );

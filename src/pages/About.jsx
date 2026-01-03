@@ -39,11 +39,11 @@ const About = () => {
                             About PawMart
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl font-extrabold mb-6 text-base-content">
+                        <h1 className="text-4xl font-extrabold mb-6 text-base-content">
                             Bangladesh's Trusted <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Pet Adoption Platform</span>
                         </h1>
 
-                        <p className="text-base-content/70 max-w-3xl mx-auto text-lg leading-relaxed">
+                        <p className="text-base-content/70 max-w-5xl mx-auto text-lg leading-relaxed">
                             PawMart connects pet owners with loving adopters across Bangladesh. We provide a secure, transparent platform
                             for pet adoption, rehoming, and the sale of pet supplies, making responsible pet ownership accessible to everyone.
                         </p>
