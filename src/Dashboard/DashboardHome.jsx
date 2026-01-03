@@ -103,7 +103,7 @@ const DashboardHome = () => {
       {/* Header - Responsive padding and text */}
       <div className="bg-linear-to-r from-blue-600 to-cyan-600 rounded-lg sm:rounded-xl shadow-lg p-4 sm:p-6 text-white">
         <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">Dashboard Overview</h1>
-        <p className="text-sm sm:text-base text-white/90">Welcome back, {user?.displayName || 'User'}! Here's your business summary.</p>
+        <p className="text-sm sm:text-base text-white/90">Welcome back, {user?.displayName }! Here's your account summary.</p>
       </div>
 
       {/* Stats Cards - Fully responsive grid */}
