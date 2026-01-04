@@ -38,7 +38,7 @@ export default function ModernFAQSection() {
     {
       question: "How do I contact a seller or pet owner?",
       answer: "Each listing displays the owner's email address in the details page. You can reach out directly via email to ask questions, schedule a visit, or arrange pickup/delivery.",
-     color: "bg-linear-to-r from-blue-600 to-cyan-600"
+      color: "bg-linear-to-r from-blue-600 to-cyan-600"
     },
     {
       question: "What areas does PawMart serve?",
@@ -60,10 +60,10 @@ export default function ModernFAQSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-linear-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
-    <Sparkles className="w-4 h-4" />
-   Quick Answers
-</div>
+          <div className="inline-flex items-center gap-2 bg-linear-to-r from-blue-600 to-cyan-600 text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <Sparkles className="w-4 h-4" />
+            Quick Answers
+          </div>
 
           <h2 className="text-4xl  font-black text-base-content mb-6">
             Frequently Asked <span className="bg-linear-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Questions</span>
@@ -79,11 +79,10 @@ export default function ModernFAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`group bg-base-100 rounded-2xl shadow-lg border-2 overflow-hidden transition-all duration-500 ${
-                openIndex === index 
-                  ? 'border-primary shadow-2xl scale-[1.02]' 
+              className={`group bg-base-100 rounded-2xl shadow-lg border-2 overflow-hidden transition-all duration-500 ${openIndex === index
+                  ? 'border-primary shadow-2xl scale-[1.02]'
                   : 'border-base-content/10 hover:border-primary/30 hover:shadow-xl'
-              }`}
+                }`}
             >
               {/* Question Button */}
               <button
@@ -92,26 +91,23 @@ export default function ModernFAQSection() {
               >
                 {/* Question Number & Text */}
                 <div className="flex items-start gap-4 flex-1">
-                  <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${faq.color} flex items-center justify-center shrink-0 font-black text-white text-lg shadow-lg transition-transform duration-500 ${
-                    openIndex === index ? 'scale-110 rotate-6' : ''
-                  }`}>
+                  <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${faq.color} flex items-center justify-center shrink-0 font-black text-white text-lg shadow-lg transition-transform duration-500 ${openIndex === index ? 'scale-110 rotate-6' : ''
+                    }`}>
                     {index + 1}
                   </div>
                   <div className="flex-1">
-                    <h3 className={`text-lg md:text-xl font-bold transition-colors duration-300 ${
-                      openIndex === index ? 'text-primary' : 'text-base-content'
-                    }`}>
+                    <h3 className={`text-sm md:text-xl font-bold transition-colors duration-300 ${openIndex === index ? 'text-primary' : 'text-base-content'
+                      }`}>
                       {faq.question}
                     </h3>
                   </div>
                 </div>
 
                 {/* Toggle Icon */}
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-500 ${
-                  openIndex === index 
-                    ? 'bg-primary rotate-180' 
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 transition-all duration-500 ${openIndex === index
+                    ? 'bg-primary rotate-180'
                     : 'bg-base-200 group-hover:bg-primary/10'
-                }`}>
+                  }`}>
                   {openIndex === index ? (
                     <Minus className="w-5 h-5 text-white" />
                   ) : (
@@ -122,9 +118,8 @@ export default function ModernFAQSection() {
 
               {/* Answer with Gradient Border */}
               <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  openIndex === index ? 'max-h-96' : 'max-h-0'
-                }`}
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${openIndex === index ? 'max-h-96' : 'max-h-0'
+                  }`}
               >
                 <div className="px-6 md:px-8 pb-6 md:pb-8">
                   <div className={`relative bg-linear-to-br ${faq.color} p-0.5 rounded-xl`}>
