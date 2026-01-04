@@ -5,6 +5,7 @@ import LatestListings from './LatestListings';
 import WhyAdopt from './WhyAdopt';
 import PetHeroes from './PetHeros';
 import About from './About';
+import ModernFAQSection from './ModernFAQSection';
 
 const Home = () => {
     return (
@@ -15,7 +16,8 @@ const Home = () => {
             <LatestListings/>
             <PetHeroes/>
             <WhyAdopt/>
-            <About/>
+             <About/>
+             <ModernFAQSection />
         </div>
     );
 };

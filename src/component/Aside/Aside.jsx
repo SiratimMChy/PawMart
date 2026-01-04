@@ -15,7 +15,7 @@ const Aside = () => {
   }
 
   return (
-    <aside className={`min-h-screen ${isCollapsed ? 'w-20' : 'w-64'} bg-linear-to-b from-base-100 to-base-200 border-r border-base-content/10 flex flex-col shadow-lg transition-all duration-300 relative`}>
+    <aside className={`min-h-screen ${isCollapsed ? 'w-20' : 'w-45 md:w-64'} bg-linear-to-b from-base-100 to-base-200 border-r border-base-content/10 flex flex-col shadow-lg transition-all duration-300 relative`}>
       {/* Toggle Button */}
       <button
         onClick={() => setIsCollapsed(!isCollapsed)}

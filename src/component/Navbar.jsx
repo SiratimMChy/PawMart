@@ -38,19 +38,17 @@ const Navbar = () => {
     }
 
     const navLinkClass = ({ isActive }) => {
-        return `relative px-4 py-2 rounded-lg font-semibold text-base transition-all duration-300 ease-in-out ${
-            isActive
-                ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-md shadow-blue-500/30"
-                : "text-base-content hover:bg-base-200 hover:text-blue-600"
-        }`;
+        return `relative px-4 py-2 rounded-lg font-semibold text-base transition-all duration-300 ease-in-out ${isActive
+            ? "bg-linear-to-r from-blue-600 to-cyan-600 text-white shadow-md shadow-blue-500/30"
+            : "text-base-content hover:bg-base-200 hover:text-blue-600"
+            }`;
     };
 
     const mobileNavLinkClass = ({ isActive }) => {
-        return `relative px-4 py-2.5 rounded-lg font-semibold text-base transition-all duration-300 ${
-            isActive
-                ? "bg-gradient-to-r from-blue-600 to-cyan-600 text-white shadow-lg"
-                : "text-base-content hover:bg-base-200"
-        }`;
+        return `relative px-4 py-2.5 rounded-lg font-semibold text-base transition-all duration-300 ${isActive
+            ? "bg-linear-to-r from-blue-600 to-cyan-600 text-white shadow-lg"
+            : "text-base-content hover:bg-base-200"
+            }`;
     };
 
     return (
@@ -78,34 +76,18 @@ const Navbar = () => {
                                 Pets & Supplies
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/bd-org" className={navLinkClass}>
+                                Animal Welfare
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to='/tips' className={navLinkClass}>
+                                PetCare Tips
+                            </NavLink>
+                        </li>
 
-                        {user && (
-                            <>
-                                <li>
-                                    <NavLink to="/profile" className={mobileNavLinkClass}>
-                                        My Profile
-                                    </NavLink>
-                                </li>
 
-                                <li>
-                                    <NavLink to="/AddListing" className={mobileNavLinkClass}>
-                                        Add Listing
-                                    </NavLink>
-                                </li>
-
-                                <li>
-                                    <NavLink to="/MyListing" className={mobileNavLinkClass}>
-                                        My Listing
-                                    </NavLink>
-                                </li>
-
-                                <li>
-                                    <NavLink to="/MyOrders" className={mobileNavLinkClass}>
-                                        My Orders
-                                    </NavLink>
-                                </li>
-                            </>
-                        )}
 
                         <li className="block lg:hidden pt-2 border-t border-base-content/10 mt-2">
                             <div className='flex items-center justify-between px-4 py-2'>
@@ -139,29 +121,13 @@ const Navbar = () => {
                         Pets & Supplies
                     </NavLink>
 
-                    <NavLink to="/faq" className={navLinkClass}>
-                        FAQ
+                    <NavLink to="/bd-org" className={navLinkClass}>
+                        Animal Welfare
                     </NavLink>
 
                     <NavLink to='/tips' className={navLinkClass}>
                         PetCare Tips
                     </NavLink>
-
-                    {user && (
-                        <>
-                            <NavLink to="/AddListing" className={navLinkClass}>
-                                Add Listing
-                            </NavLink>
-
-                            <NavLink to="/MyListing" className={navLinkClass}>
-                                My Listing
-                            </NavLink>
-
-                            <NavLink to="/MyOrders" className={navLinkClass}>
-                                My Orders
-                            </NavLink>
-                        </>
-                    )}
                 </div>
             </div>
 
@@ -212,7 +178,7 @@ const Navbar = () => {
                                 </li>
                                 <li>
                                     <Link to="/dashboard" className="hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors duration-200 py-2.5">
-                                         <MdDashboard className='w-5 h-5 shrink-0' />
+                                        <MdDashboard className='w-5 h-5 shrink-0' />
                                         <span className="font-semibold">Dashboard</span>
                                     </Link>
                                 </li>

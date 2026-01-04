@@ -25,6 +25,7 @@ import PetCareTips from "../pages/PetCareTips";
 import OrderPage from "../pages/OrderPage";
 import DashboardLayout from "../DashboardLayout/DashboardLayout";
 import DashboardHome from "../Dashboard/DashboardHome";
+import BDAnimalOrg from "../pages/BDAnimalOrg";
 
 
 
@@ -116,6 +117,11 @@ const router = createBrowserRouter([
             {
                 path: '/tips',
                 element: <PetCareTips />
+            }
+            ,
+            {
+                path: '/bd-org',
+                element: <BDAnimalOrg />
             }
             ,
             {
